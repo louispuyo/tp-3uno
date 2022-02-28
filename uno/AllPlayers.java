@@ -56,6 +56,7 @@ class TestAllPlayer extends AllPlayers {
 
     public static void main(String[] args) {
         TestAllPlayer p = new TestAllPlayer();
+        
 
     }
 }

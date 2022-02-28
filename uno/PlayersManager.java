@@ -5,23 +5,29 @@ import java.util.ArrayList;
 
 import javax.swing.event.ChangeEvent;
 
-public class PlayersManager
+public class PlayersManager <Player>
 {
-    private ArrayList <Player> players;
+    private ArrayList<Player> players;
 	private boolean canAdd;
 	private int currElem;
 	private int nextElem;
 	private boolean toRight;
-	private static PlayersManager pM = null;
+	private PlayersManager<Player> pm;
 
 
-private PlayersManager ()
+public PlayersManager ()
 {
-	this.players = new ArrayList<>();
+	this.players = new ArrayList<Player>(10);
 	this.canAdd = true;
 	this.currElem = 0;
 	this.nextElem =0;
 	this.toRight = true;
+
+}
+
+public void addPlayer(Player e)
+{
+	this.players.add(e);
 
 }
 
@@ -51,5 +57,13 @@ public String getDirection()
 		return "RIGHT";
 	}
 	return "LEFT";
+}
+}
+
+interface Display
+{
+	public static void main(String[] args) {
+	Player p1 = new Player("louis",1);	
+	p1.showCards();
 }
 }

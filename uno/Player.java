@@ -4,16 +4,18 @@
 package uno;
 import uno.ID;
 
+import uno.Hand;
+
 
 public class Player {
 	private ID <Integer> p_id;
 	private Hand p_hand;
 	private String p_name;
 	
-	public Player(ID<Integer> p_id){
-		this("Player ", p_id.getId());
-		this.p_name += this.p_id.getId();
-	}
+	// public Player(ID<Integer> p_id){
+	// 	this("Player ", p_id.getId());
+	// 	this.p_name += this.p_id.getId();
+	// }
 	
 	public Player(String name, int p_id) {
 		this.p_id   = new ID<Integer>(p_id);
@@ -21,9 +23,9 @@ public class Player {
 		this.p_name = name;
 	}
 	
-	public Player(String name, ID<Integer> p_id){
-		this(name, p_id.getId());
-	}
+	// public Player(String name, ID<Integer> p_id){
+	// 	this(name, p_id.getId());
+	// }
 	
 	/**
 	 * Get the Identification (ID) of the player.

@@ -1,5 +1,12 @@
 package uno;
 
+import uno.CardAttributs.Colors;
+import uno.SpeCard.Color;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
 
 public class BasicCard extends UnoCard {
 
@@ -31,18 +38,22 @@ public class BasicCard extends UnoCard {
         NINE    { public String toString() { return "9";}}
     }
     
+            
+   
+  
+
     
     
     @Override
     public String getColor() {
         // TODO Auto-generated method stub
-        return null;
+        return this.color.toString();
     }
 
     @Override
     public String getValue() {
         // TODO Auto-generated method stub
-        return null;
+        return this.value.toString();
     }
 
     @Override

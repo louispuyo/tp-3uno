@@ -1,12 +1,22 @@
 package uno;
 
+import java.security.cert.CertPathValidatorException.BasicReason;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Arrays;
+import uno.*;
+import uno.BasicCard.Color;
+import uno.BasicCard.Value;
+import uno.CardAttributs.Colors;
+
 public class Parties implements Game{
  
 
 
-    private PlayersManager pManager;
+    public PlayersManager<Player> pManager;
     private Effects PController;
     private Table table;
+    public ArrayList<Player> players;
 
     @Override
     public void finish() {
@@ -17,6 +27,13 @@ public class Parties implements Game{
     @Override
     public void init() {
         // TODO Auto-generated method stub
+        
+    }
+    public  Parties() {
+        // TODO Auto-generated method stub
+        this.players = new ArrayList<>();
+        players.add(new Player("q",2));
+        players.add(new Player("i",3));
         
     }
 
@@ -59,6 +76,7 @@ public class Parties implements Game{
 
     public void showHand(){
 		Player p = PController.getPlayer();
+    
 		System.out.println("CHOOSE ONE CARD:");
 		p.showCards();
 		System.out.println("---------------------------------------"
@@ -66,5 +84,32 @@ public class Parties implements Game{
 	}
 
 
+
+
+}
+
+
+
+interface TestPartie
+{
+    public static void main(String[] args) {
+        Parties partie = new Parties();
+        Player P1 = new Player("louis", 0);
+        partie.init();
+        // partie.start();
+        for (int i = 0; i < 7; i++) {
+            
+           BasicCard c = new BasicCard(Value.FIVE, );
+            partie.players.get(0).takeCard(c);
+        }
+
+        
+        partie.players.add(P1);
+        partie.players.get(0).showCards();
+        // partie.pManager.addPlayer(P1);
+        // P1.showCards();
+        
+        
+    }
 
 }
